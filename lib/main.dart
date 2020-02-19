@@ -1,16 +1,7 @@
 import 'dart:convert';
 
 import 'package:estudos_flutter/api.dart';
-import 'package:estudos_flutter/build_list_dinamic.dart';
-import 'package:estudos_flutter/build_list_view.dart';
 import 'package:estudos_flutter/user.dart';
-import 'package:estudos_flutter/widget_columnrow.dart';
-import 'package:estudos_flutter/widget_cor_preferida.dart';
-import 'package:estudos_flutter/widget_image.dart';
-import 'package:estudos_flutter/widget_login.dart';
-import 'package:estudos_flutter/widget_raisedbutton.dart';
-import 'package:estudos_flutter/widget_scaffold.dart';
-import 'package:estudos_flutter/widget_text.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
