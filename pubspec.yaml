@@ -70,6 +70,15 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+  
+  fonts:
+  - family: Glacial Indifference
+    fonts:
+      - asset: fonts/GlacialIndifference-Regular.otf
+      - asset: fonts/GlacialIndifference-Italic.otf
+        style: italic
+      - asset: fonts/GlacialIndifference-Bold.otf
+        weight: 700
+        
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
