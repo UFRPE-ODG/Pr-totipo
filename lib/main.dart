@@ -637,19 +637,29 @@ class Pagina3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.exit_to_app,size: 40,), 
+        backgroundColor: Colors.orangeAccent ,
+        
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+        }
+      ),
       appBar: AppBar(
-        backgroundColor: Color(0xFFff9903),
+        backgroundColor: Color(0xFF0303ff),
+      
         title: Text(
           "Bem-vindo(a)!",
           style: style.copyWith(
-            color:  Color(0xFF0303ff),
+            color: Colors.white,
             fontSize: 25.0,
             fontWeight: FontWeight.bold
           ),
           textAlign: TextAlign.center,
         ),
-      ),
 
+      ),
+      drawer: menu(),
       body: Center( 
         child: Container(
           height: 500.0,
@@ -672,7 +682,42 @@ class Pagina3 extends StatelessWidget {
             ]
           )
         )
+        
       )
+      
     );
   }
+}
+
+menu(){
+return Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: const <Widget>[
+        DrawerHeader(
+          decoration: BoxDecoration(
+            color: Colors.blue,
+          ),
+          child: Text(
+            'Menu',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+            ),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.message),
+          title: Text('Messages'),
+        ),
+        ListTile(
+          leading: Icon(Icons.account_circle),
+          title: Text('Perfil'),
+        ),
+        ListTile(
+          leading: Icon(Icons.settings),
+          title: Text('Configurações'),
+        ),
+      ],
+    ),);
 }
