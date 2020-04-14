@@ -642,7 +642,7 @@ class Pagina3 extends StatelessWidget {
         title: Text(
           "Bem-vindo(a)!",
           style: style.copyWith(
-            color: Color(0xFF3030ff),
+            color:  Color(0xFF0303ff),
             fontSize: 25.0,
             fontWeight: FontWeight.bold
           ),
@@ -663,7 +663,7 @@ class Pagina3 extends StatelessWidget {
                 child: Text(
                   "Esse é uma visão de como será a plataforma do ODG",
                   style: style.copyWith(
-                    color: Color(0xFF3030ff),
+                    color: Colors.blueAccent,
                     fontSize: 30.0,
                   ),
                   textAlign: TextAlign.center,
