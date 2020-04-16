@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:applogin/main.dart';
 import 'Botao.dart';
-
+import 'Pagina3.dart';
 
 TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
 
