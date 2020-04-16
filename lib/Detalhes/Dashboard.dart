@@ -3,19 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:applogin/main.dart';
 import 'Pagina3.dart';
 
-TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
-
-class Mensagem extends StatefulWidget {
+class Dashboard extends StatefulWidget {
   @override
-  _MensagemState createState() =>  _MensagemState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _MensagemState extends State<Mensagem> {
-  
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+          backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.done_outline,size: 40,), 
         backgroundColor: Colors.orangeAccent ,
@@ -28,7 +25,7 @@ class _MensagemState extends State<Mensagem> {
         backgroundColor: Color(0xFF0303ff),
       
         title: Text(
-          "Mensagens",
+          "Dashboard",
           style: style.copyWith(
             color: Colors.white,
             fontSize: 25.0,
@@ -55,7 +52,6 @@ class _MensagemState extends State<Mensagem> {
         )
       )
     )
-  );
-  
+    );
   }
 }

@@ -13,7 +13,7 @@ class Botao extends StatelessWidget {
       Track("paddingLeft")
           .add(Duration(milliseconds: 1000), Tween(begin: 0.0, end: 20.0)),
       Track("color").add(Duration(milliseconds: 1000),
-          ColorTween(begin:  Colors.white, end: Colors.blue)),
+          ColorTween(begin:  Colors.grey, end: Colors.blueAccent)),
       Track("rotation")
           .add(Duration(milliseconds: 1000), Tween(begin: -2 * 3.14, end: 0.0)),
     ]);
@@ -54,19 +54,19 @@ Widget _buildCheckbox(context, animation) {
 
   BoxDecoration _innerBoxDecoration(color) => BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(25)),
-      color: Color(0xFFEEEEff),
+      color: Colors.white,
       border: Border.all(
           width: 2,
-          color: color,
+          color: Colors.white,
         ),
       );
 
   BoxDecoration _outerBoxDecoration(color) => BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(30),),
-        color: Color(0xFFc8e9ff),
+        color: color,
         border: Border.all(
           width: 2,
-          color: color,
+          color: Colors.white,
         ),
       );
 

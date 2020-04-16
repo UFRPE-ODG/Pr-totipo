@@ -34,7 +34,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                 
                 children: <Widget>[
 
-                  SizedBox(height: 240.0, child: Image.asset("imagens/logo-public.png", fit: BoxFit.scaleDown)),
+                  SizedBox(height: 240.0, child: Image.asset("imagens/logo-public.jpeg", fit: BoxFit.scaleDown)),
                   
                   SizedBox(width: 300.0, child: buildTextLogin()),
 

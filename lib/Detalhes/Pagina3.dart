@@ -4,6 +4,7 @@ import 'Configuracao.dart';
 import 'Mensagem.dart';
 import 'Perfil.dart';
 import 'HomePage.dart';
+import 'Dashboard.dart';
 
 class Pagina3 extends StatelessWidget {
 
@@ -97,7 +98,15 @@ return Drawer(
              image: DecorationImage(
                fit: BoxFit.fill,
                image: NetworkImage(imagemdefundo),),
-           ),),   
+           ),),
+        ListTile(
+          leading: Icon(Icons.grain,color: Colors.blueAccent,),
+          title: Text('Dashboard',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+           onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Mensagem()));
+              }
+        ), 
         ListTile(
           leading: Icon(Icons.message,color: Colors.blueAccent,),
           title: Text('Messages',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
