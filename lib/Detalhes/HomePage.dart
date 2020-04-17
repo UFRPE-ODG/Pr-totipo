@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
               
-              SizedBox(height: 250.0, child: Image.asset("imagens/logo-public.jpeg", fit: BoxFit.contain)),
+              SizedBox(height: 250.0, child: Image.asset("imagens/logo-public.png", fit: BoxFit.contain)),
               
               SizedBox(width: 220.0, child: botaoCadastrar()),
 
