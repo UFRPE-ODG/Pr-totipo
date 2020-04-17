@@ -1,3 +1,5 @@
+import 'package:progress_dialog/progress_dialog.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Login.dart';
 import 'WidgetLoginState.dart';
@@ -12,8 +14,16 @@ class _HomePageState extends State<HomePage> {
   @override
 
   TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 18.0);
+  ProgressDialog pr;
 
   Widget build(BuildContext context) {
+    
+    pr = new ProgressDialog(context, showLogs: true);
+    pr.style(message: " Loading...",
+      progressWidget: (Image.asset('imagens/logo-splash.gif')),
+      elevation: 20.0,
+    );
+    
     return Scaffold(
       backgroundColor: Colors.white,
 
@@ -60,9 +70,14 @@ class _HomePageState extends State<HomePage> {
         ),
 
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => Login())
-          );
+          pr.show();
+          Future.delayed(Duration(seconds: 2)).then((value) {
+            pr.hide().whenComplete(() {
+              Navigator.of(context).push(CupertinoPageRoute(
+                builder: (BuildContext context) => Login()
+              ));
+            });
+          });
         }
       )
     );
@@ -87,9 +102,14 @@ class _HomePageState extends State<HomePage> {
         ),
 
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => WidgetLogin())
-          );
+          pr.show();
+          Future.delayed(Duration(seconds: 2)).then((value) {
+            pr.hide().whenComplete(() {
+              Navigator.of(context).push(CupertinoPageRoute(
+                builder: (BuildContext context) => WidgetLogin()
+              ));
+            });
+          });
         }
       )
     );
