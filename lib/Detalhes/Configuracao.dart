@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:applogin/main.dart';
+import 'package:estudos_flutter/main.dart';
 import 'Botao.dart';
 import 'Pagina3.dart';
 

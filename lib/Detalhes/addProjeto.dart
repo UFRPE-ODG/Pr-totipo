@@ -1,58 +1,27 @@
+
+import 'Projeto.dart';
+
+import 'Projetos.dart';
 import 'package:flutter/material.dart';
-import 'package:estudos_flutter/main.dart';
-import 'Pessoa.dart';
-import 'HomePage.dart';
 
-var novos = new Pessoa();
-var listanovos = new List<Pessoa>();
+var projnovo = new Projetos();
+var listaprojetos = new List<Projetos>();
 
-class Login extends StatefulWidget {
+String nome;
+String des;
+int nume;
+int porcen;
+
+class AddProjeto extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _AddProjetoState createState() => _AddProjetoState();
   
 }
-class _LoginState extends State<Login> {
+class _AddProjetoState extends State<AddProjeto> {
   
   GlobalKey<FormState> formkey2 = GlobalKey<FormState>();  
-  final TextEditingController _emailFilter = new TextEditingController();
-  final TextEditingController _passwordFilter = new TextEditingController();
   
   TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
-
-  String _email = "";
-  String _password = "";
-
-
-  @override
-  _LoginPageState() {
-    _emailFilter.addListener(_emailListen);
-    _passwordFilter.addListener(_passwordListen);
-  }
-
-  _emailListen() {
-    if (_emailFilter.text.isEmpty) {
-       return Text("Informe a senha");
-    } else {
-      _email = _emailFilter.text;
-    }
-  }
-
-  _passwordListen() {
-    if (_passwordFilter.text.isEmpty) {
-       return Text("Informe o email");
-    } else {
-      _password = _passwordFilter.text;
-    }
-  }
-
-  initState() {
-    super.initState();
-    _LoginPageState();
-  }
-
-  dispose() {
-    super.dispose();
-  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +39,7 @@ class _LoginState extends State<Login> {
                 children: <Widget>[
 
                   Text(
-                    "Criar Nova Conta",
+                    "Criar Novo projeto",
                     style: style.copyWith(
                       color: Color(0xFF3030ff),
                       fontSize: 25.0
@@ -100,7 +69,7 @@ class _LoginState extends State<Login> {
     return TextFormField(
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        labelText: "Login",
+        labelText: "Nome do projeto",
                             
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0), 
@@ -119,16 +88,14 @@ class _LoginState extends State<Login> {
       style: style.copyWith(
         color: Colors.black
       ),
-                        
+                
       validator: (value){
+        nome = value;
         if(value.isEmpty){
-          return "Informe o Login";
+          return "Informe o Nome";
         }
           return null;
         },
-
-        controller: _emailFilter,   
-
     );
   }
 
@@ -136,7 +103,7 @@ class _LoginState extends State<Login> {
     return TextFormField(
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        labelText: "Nome",
+        labelText: "Descrição",
                     
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0), 
@@ -158,8 +125,9 @@ class _LoginState extends State<Login> {
 
                       
       validator: (value){
+        des = value;
         if(value.isEmpty){
-          return "Informe seu nome";
+          return "Informe uma descrição do projeto";
         }
           return null;
       },  
@@ -171,8 +139,7 @@ class _LoginState extends State<Login> {
       obscureText: true,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        labelText: "Senha",
-                    
+        labelText: "Nº de participantes",           
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
@@ -192,23 +159,22 @@ class _LoginState extends State<Login> {
       ),
                
       validator: (value){
+        nume = int.parse(value);
         if(value.isEmpty){
-          return "Informe a sua senha";
+          return "Informe a quantidade de participantes";
         }
           return null;
       },
 
-      controller: _passwordFilter,
            
     );
   }
- var  confirm;
   campoConfirmarSenha(){
     return TextFormField(
       obscureText: true,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        labelText: "Confirme a senha",
+        labelText: "Porcentagem concluida",
                     
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(32.0), 
@@ -229,9 +195,9 @@ class _LoginState extends State<Login> {
       ),
                
       validator: (value){
-        confirm = value;
-        if(value.isEmpty || value != _password){
-          return "As senhas não correspondem!";
+        porcen = int.parse(value);
+        if(value.isEmpty){
+          return "Informe a porcentagem";
         }
          return null;
       },        
@@ -246,7 +212,7 @@ class _LoginState extends State<Login> {
       child: RaisedButton(
         color: Color(0xFFff9903),
 
-        child: Text("Cadastrar",
+        child: Text("Criar",
           textAlign: TextAlign.center,
           style: style.copyWith(
           color: Colors.white,
@@ -262,24 +228,15 @@ class _LoginState extends State<Login> {
         onPressed: () => {
                       
           formkey2.currentState.validate(),
-                      
-          if(_email.isNotEmpty & _password.isNotEmpty){
-            
-            novos = Pessoa.construtor(_email,_password),
-                        
-            if(!listanovos.contains(novos)){
-              listanovos.add(novos),  
-              debugPrint("Cadastrado com sucesso"),
-            },
-            if(confirm == _password){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()))
-            }
-            
+          projnovo.nome = nome,
+          projnovo.descricao = des,
+          projnovo.pessoasParticipando = nume,
+          projnovo.porcentagemFeita = porcen,
 
-          }           
-          else{
-            debugPrint("Informações necessárias não informadas")
-          }
+          listaprojetos.add(projnovo),
+
+          Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Projeto())),
+          
 
         },
       ),

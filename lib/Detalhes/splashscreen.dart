@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'main.dart';
+import 'HomePage.dart';
 
 
 class SplashPage extends StatefulWidget {

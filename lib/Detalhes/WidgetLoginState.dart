@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:applogin/main.dart';
 import 'Pessoa.dart';
 import 'Pagina3.dart';
 import 'HomePage.dart';
-
+import 'Login.dart';
 //TELA DE LOGIN
 class WidgetLogin extends StatefulWidget {
   @override

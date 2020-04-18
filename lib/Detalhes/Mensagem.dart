@@ -1,6 +1,6 @@
-import 'package:applogin/Detalhes/Configuracao.dart';
+import 'Configuracao.dart';
 import 'package:flutter/material.dart';
-import 'package:applogin/main.dart';
+import 'package:estudos_flutter/main.dart';
 import 'Pagina3.dart';
 
 TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);

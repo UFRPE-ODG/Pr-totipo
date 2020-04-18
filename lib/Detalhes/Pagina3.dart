@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:applogin/main.dart';
+import 'package:estudos_flutter/main.dart';
 import 'Configuracao.dart';
 import 'Mensagem.dart';
 import 'Perfil.dart';
@@ -36,17 +36,6 @@ class Pagina3 extends StatelessWidget {
         ),
        
       ),
-     /* bottomNavigationBar: 
-      BottomNavigationBar(
-        backgroundColor: Color(0xFF0303ff),
-        currentIndex: 2,
-        iconSize: 30,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.message,color: Colors.white,), title: Text("Mensagem", style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.white),),),
-          BottomNavigationBarItem(icon: Icon(Icons.settings, color: Colors.white), title: Text("Configurações",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.white),),),
-          BottomNavigationBarItem(icon: Icon(Icons.person, color: Colors.white), title: Text("Perfil",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.white),),),
-        ],
-      ),*/
       drawer: menu(context), 
       body: Center( 
         child: Container(
@@ -104,7 +93,7 @@ return Drawer(
           title: Text('Dashboard',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
            onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Mensagem()));
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Dashboard()));
               }
         ), 
         ListTile(

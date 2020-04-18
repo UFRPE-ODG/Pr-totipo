@@ -1,6 +1,6 @@
-import 'package:applogin/Detalhes/Configuracao.dart';
+import 'Projeto.dart';
+import 'Configuracao.dart';
 import 'package:flutter/material.dart';
-import 'package:applogin/main.dart';
 import 'Pagina3.dart';
 
 class Dashboard extends StatefulWidget {
@@ -41,12 +41,31 @@ class _DashboardState extends State<Dashboard> {
           color: Colors.white,
            child: Center(
             child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
               
               SizedBox(
-                child: Text("Nenhuma mensagem recebida",style: style,))
+                child: Text("   Analise melhor os gráficos selecionando o botão ao seu lado",style: new TextStyle(color: Colors.blueAccent, fontSize: 20,fontFamily: "Glacial Indifference", ) ,)),
+              SizedBox(
+                height: 300,
+                 child: Row(
+                   children: <Widget>[
+                     SizedBox(height: 200,child: Image.asset("imagens/5C.JPG", fit: BoxFit.scaleDown)),
+                     IconButton(icon: Icon(Icons.add_circle_outline,color: Colors.blue,), onPressed: null),
+                    
+                   ]
+                 ),
+              ),
+              SizedBox(
+                height: 20,
+                 child: Row(
+                   children: <Widget>[
+                      Text(" Projetos   ",style:new TextStyle(color: Colors.blueAccent, fontSize: 20,fontFamily: "Glacial Indifference", ),),
+                      IconButton(icon: Icon(Icons.list), onPressed:() {Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Projeto()));},iconSize: 30,color: Colors.blueAccent,),
+                   ]
+                 ),
+                 
+              ),
+              Divider(height: 60,),
             ]
           )
         )
@@ -54,4 +73,31 @@ class _DashboardState extends State<Dashboard> {
     )
     );
   }
+}
+
+/*info(){
+   return BottomNavigationBar(
+        backgroundColor: Color(0xFF0303ff),
+        currentIndex: 2,
+        iconSize: 30,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.message,color: Colors.white,), title: Text("Mensagem", style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.white),),),
+          BottomNavigationBarItem(icon: Icon(Icons.settings, color: Colors.white), title: Text("Configurações",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.white),),),
+          BottomNavigationBarItem(icon: Icon(Icons.person, color: Colors.white), title: Text("Perfil",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.white),),),
+        ],
+   );
+}*/
+
+graf(){
+  return BottomAppBar(
+      color: Colors.blueAccent,
+      child: 
+      Row(
+        children: <Widget>[
+          IconButton(icon: Icon(Icons.insert_chart), onPressed: null),
+          IconButton(icon: Icon(Icons.info), onPressed: null),
+          IconButton(icon: Icon(Icons.perm_data_setting), onPressed: null)
+        ]
+      ),
+    );
 }

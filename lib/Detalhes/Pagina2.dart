@@ -1,10 +1,9 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:applogin/main.dart';
 import 'API.dart';
 import 'Pessoa.dart';
 import 'HomePage.dart';
+import 'Login.dart';
 
 class Pag2 extends StatefulWidget {
   @override
