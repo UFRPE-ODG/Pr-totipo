@@ -123,29 +123,49 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text('${items[index]}'),
+              child: Card(
+                    elevation: 10,
+                    color: Colors.blue[200],
+                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
 
-                    onTap: (){
-                      var pass = new Projetos();
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                      child: ListTile(
+                      
+                        leading: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {},
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            padding: EdgeInsets.symmetric(vertical: 4.0),
+                            alignment: Alignment.center,
+                            child: Icon(Icons.assignment, 
+                              color: Colors.black,
+                              size: 50.0,
+                            )
+                          ),
+                        ),
+                        title: Text('${items[index]}'),
+                        dense: false,
 
-                      for(int i = 0; i<meusProjetos.length;i++){
-                        if(meusProjetos[i].nome.contains(items[index])){
-                          pass = meusProjetos[i];
-                        }
-                      }
+                        onTap: () {
+                          var pass = new Projetos();
 
-                      Navigator.push(context, 
-                        MaterialPageRoute(
-                          builder: (context) => DetailProject(pass)
-                        )
-                      );
+                          for(int i = 0; i<meusProjetos.length;i++){
+                            if(meusProjetos[i].nome.contains(items[index])){
+                              pass = meusProjetos[i];
+                            }
+                          }
 
-                    }        
+                          Navigator.push(context, 
+                            MaterialPageRoute(
+                              builder: (context) => DetailProject(pass)
+                            )
+                          );
+                        },
+                      )
+                    ), 
                   );
                 },
               ),
@@ -156,8 +176,3 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 }
-
-
-
-
-  
