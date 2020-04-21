@@ -13,14 +13,15 @@ class SearchPage extends StatefulWidget {
   @override
   _SearchPageState createState() => new _SearchPageState();
 }
+
   var items = List<String>();
+
 class _SearchPageState extends State<SearchPage> {
+ 
   TextEditingController editingController = TextEditingController(); 
+  TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
+  bool isSearching = false;
 
-  //final duplicateItems = List<String>.generate(10000, (i) => "Item $i");
-
-
-  
   @override
   void initState() {
 
@@ -162,7 +163,7 @@ class _SearchPageState extends State<SearchPage> {
                         trailing: IconButton(
                           icon: Icon(Icons.edit, size: 30.0, color: Colors.black),
                           onPressed: () {
-                            _dialogAddRecDesp(context) 
+                            _dialogAddRecDesp(context); 
                           },
                         ),
 
