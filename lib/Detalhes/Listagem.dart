@@ -123,7 +123,11 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
             Expanded(
-              child: Card(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return Card(
                     elevation: 10,
                     color: Colors.blue[200],
                     margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
