@@ -68,30 +68,66 @@ class _SearchPageState extends State<SearchPage> {
       appBar: new AppBar(
         centerTitle: true,
         backgroundColor: Color(0xFF0303ff),
-        title: new Text("Pesquisa"),
+        title: !isSearching 
+          ? Text("Pesquisa")
+          : TextField(
+            onChanged: (value) {
+              filterSearchResults(value);
+            },
+            controller: editingController,
+
+            style: style.copyWith(
+              color: Colors.white,
+            ),
+            
+            decoration: InputDecoration(
+              hintText: "Search",
+              hintStyle: style.copyWith(
+                fontSize: 18.0,
+                color: Colors.white
+              ),
+              icon: Icon(Icons.search, color: Colors.white),
+              fillColor: Colors.white,
+              focusColor: Colors.white,
+              hoverColor: Colors.white,
+
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white,
+                ),
+              )
+
+            ),
+          ),
+        
+        actions: <Widget>[
+          
+          isSearching
+            ? IconButton(
+              icon: Icon(Icons.close),
+
+              onPressed: () {
+                setState((){
+                  this.isSearching = false;
+                });
+              },
+            )
+            : IconButton(
+              icon: Icon(Icons.search),
+
+              onPressed: () {
+                setState((){
+                  this.isSearching = true;
+                });
+              },
+            )
+
+        ],
       ),
+     
       body: Container(
         child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (value) {
-                  filterSearchResults(value);
-                },
-                controller: editingController,
-                decoration: InputDecoration(
-                    labelText: "Search",
-                    hintText: "Search",
-                    prefixIcon: Icon(Icons.search, color: Color(0xFF0303ff),),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(25.0))),
-                        fillColor: Color(0xFF0303ff),
-                        focusColor: Color(0xFF0303ff),
-                        hoverColor: Color(0xFF0303ff),
-                ),
-              ),
-            ),
+          children: <Widget>[  
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -122,20 +158,12 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         title: Text('${items[index]}'),
                         dense: false,
-                        trailing: SizedBox(
-                          width: 40.0,
-                          height: 40.0,   
-                          child: Center(
-                            child: RaisedButton( 
-                              color: Colors.blue[200],
-                              child: Icon(Icons.edit),
-                              elevation: 0.0,
-                              onPressed: () {
-                                _dialogAddRecDesp(context);
-                                
-                              },
-                            ),
-                          ),
+                       
+                        trailing: IconButton(
+                          icon: Icon(Icons.edit, size: 30.0, color: Colors.black),
+                          onPressed: () {
+                            _dialogAddRecDesp(context) 
+                          },
                         ),
 
                         onTap: () {
