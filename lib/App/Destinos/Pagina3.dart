@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:estudos_flutter/main.dart';
 import 'Configuracao.dart';
 import 'Mensagem.dart';
 import 'Perfil.dart';
 import 'HomePage.dart';
 import 'Dashboard.dart';
+import 'HeatMap.dart';
 
 class Pagina3 extends StatelessWidget {
 
@@ -45,7 +45,7 @@ class Pagina3 extends StatelessWidget {
           child: Column(
             children: <Widget>[
               
-              SizedBox(
+              /*SizedBox(
                 width: 300,
                 child: Text(
                   "Esse é uma visão de como será a plataforma do ODG",
@@ -55,7 +55,96 @@ class Pagina3 extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-              )
+              ),*/
+              SizedBox(
+                height: 200,
+                child: Card(
+                   elevation: 10,
+                    color: Colors.white,
+                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                      child: ListTile(
+                      
+                        leading: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {},
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            padding: EdgeInsets.symmetric(vertical: 4.0),
+                            alignment: Alignment.center,
+                          ),
+                        ),
+                        title: Text('Entregar projeto de 2020',
+                          style: style.copyWith(
+                          color: Colors.blueAccent,
+                          fontSize: 30.0,
+                        ),),
+                        dense: false,
+                        trailing: SizedBox(
+                          width: 40.0,
+                          height: 40.0,   
+                          child: Center(
+                            child:  IconButton(icon: Icon(Icons.star,color: Colors.yellowAccent),iconSize: 40, onPressed: null,),
+                            
+                          ),
+                        ),
+
+                        onTap: () {
+                          
+                        },
+                      ),
+                      
+                    ), 
+                ),
+              ),
+              SizedBox(
+                height: 200,
+                child: Card(
+                   elevation: 10,
+                    color: Colors.white,
+                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                      child: ListTile(
+                      
+                        leading: GestureDetector(
+                          behavior: HitTestBehavior.translucent,
+                          onTap: () {},
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            padding: EdgeInsets.symmetric(vertical: 4.0),
+                            alignment: Alignment.center,
+                          ),
+                        ),
+                        title: Text('Análise de dados 2020',
+                          style: style.copyWith(
+                          color: Colors.blueAccent,
+                          fontSize: 30.0,
+                        ),),
+                        dense: false,
+                        trailing: SizedBox(
+                          width: 40.0,
+                          height: 40.0,   
+                          child: Center(
+                            child:  IconButton(icon: Icon(Icons.star,color: Colors.yellowAccent),iconSize: 40, onPressed: null,),
+                            
+                          ),
+                        ),
+
+                        onTap: () {
+                          
+                        },
+                      ),
+                      
+                    ), 
+                ),
+              ),
+              
             ]
           )
         )
@@ -96,6 +185,14 @@ return Drawer(
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Dashboard()));
               }
         ), 
+        ListTile(
+          leading: Icon(Icons.map,color: Colors.blueAccent,),
+          title: Text('HeatMap',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+           onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => MapSample()));
+              }
+        ),
         ListTile(
           leading: Icon(Icons.message,color: Colors.blueAccent,),
           title: Text('Messages',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),

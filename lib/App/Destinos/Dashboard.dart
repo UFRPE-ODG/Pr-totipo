@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'Pagina3.dart';
 import 'Listagem.dart';
 
+
 class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();
@@ -129,21 +130,25 @@ alert(context){
         content: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                
                 children: <Widget>[
                   Row(
                     children: <Widget>[
                       SizedBox(
                         height: 200,
                         child: Column(
+                          
                           children: <Widget>[
+                            
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: <Widget>[
-                                  Text(" Esse gráfico foi feito"),
-                                  Text(" de acordo com os dados"),
-                                  Text(" informados abaixo"),
-                                  Text(" 30 40 50 60"),
+                                  
+                                  Text(" Esse gráfico foi feito", style: style,),
+                                  Text(" de acordo com os dados",style: style),
+                                  Text(" informados abaixo",style: style),
+                                  Text(" 30 40 50 60",style: style),
                                   SizedBox(child:  IconButton(
                                   icon: Icon(Icons.done_all),
                                   color: Colors.white,
