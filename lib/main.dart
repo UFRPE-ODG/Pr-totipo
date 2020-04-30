@@ -1,6 +1,7 @@
-import 'package:estudos_flutter/App/Destinos/HomePage.dart';
+import 'App/Destinos/Listagem.dart';
 import 'package:flutter/material.dart';
-import 'package:estudos_flutter/App/Destinos/Listagem.dart';
+import 'App/Destinos/HomePage.dart';
+
 
 
 void main() => runApp(MyApp());

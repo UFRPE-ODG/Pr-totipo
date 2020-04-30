@@ -1,60 +1,77 @@
 import 'dart:async';
-
+import 'package:estudos_flutter/App/ClassesAParte/Aluno.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_heatmap/google_maps_flutter_heatmap.dart';
 bool marcadores = true; 
 var _markers = Set<Marker>();
-LatLng pinPosition = LatLng(34.42796133580664, -100.985749655962); 
-LatLng pinPosition2 = LatLng(34.52796133580664, -100.995749655962); 
-LatLng pinPosition3 = LatLng(34.62796133580664, -101.085749655962);
-LatLng pinPosition4 = LatLng(34.82796133580664, -100.685749655962); 
-LatLng pinPosition5 = LatLng(34.34796133580664, -100.085749655962);  
+
+var alunos = List<Aluno>();
+
+Aluno jorge = Aluno.construtor("Jorge",122,6,"Recife");
+Aluno matheus = Aluno.construtor("Matheus",123,5,"Abreu e Lima");
+Aluno luana = Aluno.construtor("Luana",333,4,"Abreu e Lima");
+Aluno bianca = Aluno.construtor("Bianca",06345,5,"Recife");
+Aluno bernardo = Aluno.construtor("Bernardo",22063,5,"Recife");
+Aluno carla = Aluno.construtor("Carla",06133,3,"Recife");
+Aluno giovani = Aluno.construtor("Giovani",0223,2,"Recife");
+Aluno sebastian = Aluno.construtor("Sebastian",193,5,"Vitória de Santo Antão");
+Aluno henrique = Aluno.construtor("Henrique",120,5,"Camaragibe");
+Aluno mirela = Aluno.construtor("Mirela",100,6,"Camaragibe");
+Aluno caio = Aluno.construtor("caio",1880,2,"Camaragibe");
+
+
+
+LatLng pinPosition = LatLng(-8.05428, -34.8813); 
+LatLng pinPosition2 = LatLng(-8.1208,-35.0154); 
+LatLng pinPosition3 = LatLng(-8.0705, -35.1936);
+LatLng pinPosition4 = LatLng(-8.0118, -35.5852); 
+LatLng pinPosition5 = LatLng(-8.05442, -35.5410);  
+
+Map<String,LatLng> posicoes = {
+  "Recife": pinPosition,
+  "Jaboatão": pinPosition2,
+  "Vitória": pinPosition3,
+  "Camaragibe": pinPosition4,
+  "Abreu e Lima": pinPosition5,
+
+};
+
+var posicao;
+
+
 addMarkers(){
-  _markers.add(
-     Marker(
-      markerId: MarkerId('aluno'),
-      position: pinPosition,
-      visible: marcadores,
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+  alunos.add(jorge);
+  alunos.add(matheus);
+  alunos.add(sebastian);
+  alunos.add(henrique);
+  alunos.add(bianca);
+  alunos.add(luana);
 
-    )
-  );
-  _markers.add(
-     Marker(
-      markerId: MarkerId('aluno2'),
-      position: pinPosition2,
-      visible: marcadores,
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+  for(Aluno aluno in alunos){
+    if(aluno.cidade == "Abreu e Lima"){
+      posicao = pinPosition5;
 
-    )
-  );
-  _markers.add(
-     Marker(
-      markerId: MarkerId('aluno3'),
-      position: pinPosition3,
-      visible: marcadores,
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+    }else if(aluno.cidade == "Camaragibe"){
+       posicao = pinPosition4;
+    }else if(aluno.cidade == "Vitória de Santo Antão"){
+       posicao = pinPosition3;
+    }else if(aluno.cidade == "Jaboatão"){
+       posicao = pinPosition2;
+    }else{
+       posicao = pinPosition;
+    }
+    _markers.add(
+      Marker(
+       markerId: MarkerId(aluno.nome),
+       position: posicao,
+       visible: marcadores,
+       icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
 
-    )
-  );
-  _markers.add(
-     Marker(
-      markerId: MarkerId('aluno4'),
-      position: pinPosition4,
-      visible: marcadores,
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+      )
 
-    )
-  );
-  _markers.add(
-     Marker(
-      markerId: MarkerId('aluno5'),
-      position: pinPosition5,
-      visible: marcadores,
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-
-    )
-  );
+    );
+  }
+  
 }
 
 class MapSample extends StatefulWidget {
@@ -68,11 +85,11 @@ class MapSampleState extends State<MapSample> {
   final Set<Heatmap> _heatmaps = {};
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(34.42796133580664, -100.985749655962),
+    target: LatLng(-8.05428, -34.8813),
     zoom: 10.47,
   );
 
-  LatLng _heatmapLocation = LatLng(37.42796133580664, -122.085749655962);
+  LatLng _heatmapLocation = LatLng(-8.05428, -34.8813);
 
 
   static final CameraPosition _kLake = CameraPosition(

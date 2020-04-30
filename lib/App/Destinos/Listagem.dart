@@ -1,3 +1,4 @@
+import 'package:estudos_flutter/App/Destinos/Configuracao.dart';
 import 'package:flutter/material.dart';
 import 'WidgetLoginState.dart';
 import 'Projeto.dart';
@@ -16,7 +17,8 @@ class SearchPage extends StatefulWidget {
   var items = List<String>();
 class _SearchPageState extends State<SearchPage> {
   TextEditingController editingController = TextEditingController(); 
-
+  TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
+   bool isSearching = false;
   //final duplicateItems = List<String>.generate(10000, (i) => "Item $i");
 
 
@@ -65,33 +67,67 @@ class _SearchPageState extends State<SearchPage> {
         },
       ),
 
-      appBar: new AppBar(
-        centerTitle: true,
+      appBar: new AppBar(    centerTitle: true,
         backgroundColor: Color(0xFF0303ff),
-        title: new Text("Pesquisa"),
+        title: !isSearching 
+          ? Text("Pesquisa")
+          : TextField(
+            onChanged: (value) {
+              filterSearchResults(value);
+            },
+            controller: editingController,
+
+            style: style.copyWith(
+              color: Colors.white,
+            ),
+            
+            decoration: InputDecoration(
+              hintText: "Search",
+              hintStyle: style.copyWith(
+                fontSize: 18.0,
+                color: Colors.white
+              ),
+              icon: Icon(Icons.search, color: Colors.white),
+              fillColor: Colors.white,
+              focusColor: Colors.white,
+              hoverColor: Colors.white,
+
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white,
+                ),
+              )
+
+            ),
+          ),
+        
+        actions: <Widget>[
+          
+          isSearching
+            ? IconButton(
+              icon: Icon(Icons.close),
+
+              onPressed: () {
+                setState((){
+                  this.isSearching = false;
+                });
+              },
+            )
+            : IconButton(
+              icon: Icon(Icons.search),
+
+              onPressed: () {
+                setState((){
+                  this.isSearching = true;
+                });
+              },
+            )
+
+        ],
       ),
       body: Container(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (value) {
-                  filterSearchResults(value);
-                },
-                controller: editingController,
-                decoration: InputDecoration(
-                    labelText: "Search",
-                    hintText: "Search",
-                    prefixIcon: Icon(Icons.search, color: Color(0xFF0303ff),),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(25.0))),
-                        fillColor: Color(0xFF0303ff),
-                        focusColor: Color(0xFF0303ff),
-                        hoverColor: Color(0xFF0303ff),
-                ),
-              ),
-            ),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
