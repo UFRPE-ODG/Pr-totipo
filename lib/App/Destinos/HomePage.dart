@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     
       child: RaisedButton(  
         color: Colors.white,
-        child: Text("SIGN UP",
+        child: Text("CADASTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
             color: Color(0xFF2626ff),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         shape: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(10.0),
           borderSide: BorderSide(color: Color(0xFF2626ff), width: 2.5),
         ),
 
@@ -89,8 +89,8 @@ class _HomePageState extends State<HomePage> {
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
     
       child: RaisedButton(  
-        color: Color(0xFFff9903),
-        child: Text("LOGIN",
+        color: Color(0xFF3030ff),
+        child: Text("ENTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
             color: Colors.white,
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0)
+          borderRadius: BorderRadius.circular(10.0)
         ),
 
         onPressed: (){
