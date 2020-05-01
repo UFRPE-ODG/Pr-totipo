@@ -104,15 +104,15 @@ class _LoginState extends State<Login> {
         labelText: "Login",
                             
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff))
         ),
       ),
@@ -140,15 +140,15 @@ class _LoginState extends State<Login> {
         labelText: "Nome",
                     
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff))
         ),
       ),
@@ -175,15 +175,15 @@ class _LoginState extends State<Login> {
         labelText: "Senha",
                     
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff))
         ),
       ),
@@ -212,15 +212,15 @@ class _LoginState extends State<Login> {
         labelText: "Confirme a senha",
                     
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff))
         ),
       ),
@@ -245,19 +245,19 @@ class _LoginState extends State<Login> {
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     
       child: RaisedButton(
-        color: Color(0xFFff9903),
-
-        child: Text("Cadastrar",
+        color: Colors.white,
+        child: Text("CADASTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
-          color: Colors.white,
-          fontSize: 25.0,
+          color: Color(0xFF3030ff),
+          fontSize: 20.0,
           fontWeight: FontWeight.bold
           ),
         ),
                       
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0)
+        shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(color: Color(0xFF3030ff), width: 2.5),
         ),
 
         onPressed: () => {
