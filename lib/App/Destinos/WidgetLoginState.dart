@@ -39,7 +39,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
 
                   SizedBox(width: 300.0, child: buildTextSenha()),
 
-                  SizedBox(width: 200.0, child: buildButtonEntrar()),
+                  SizedBox(width: 300.0, child: buildButtonEntrar()),
                   
                 ]
               ) 
@@ -57,15 +57,15 @@ class _WidgetLoginState extends State<WidgetLogin> {
         labelText: "Login",
                  
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff))),
       ),
 
@@ -92,15 +92,15 @@ class _WidgetLoginState extends State<WidgetLogin> {
         labelText: "Senha",
                  
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32.0), 
+          borderRadius: BorderRadius.circular(10.0), 
           borderSide: BorderSide(color: Color(0xFF2626ff))),
       ),
 
@@ -126,16 +126,16 @@ class _WidgetLoginState extends State<WidgetLogin> {
       
       child: RaisedButton(
         
-        color: Color(0xFFff9903),
-        child: Text("Entrar",
+        color: Color(0xFF3030ff),
+        child: Text("ENTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
             color: Colors.white,
-            fontWeight: FontWeight.bold
+            //fontWeight: FontWeight.bold
           ),
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0)
+          borderRadius: BorderRadius.circular(10.0)
         ),
         
         onPressed: () {
