@@ -1,3 +1,4 @@
+import 'package:estudos_flutter/App/Destinos/splashscreen.dart';
 import 'App/Destinos/Listagem.dart';
 import 'package:flutter/material.dart';
 import 'App/Destinos/HomePage.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue  
       ),
-      home: HomePage()
+      home: SplashPage()
     );
   }
 }
