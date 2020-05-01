@@ -187,10 +187,10 @@ return Drawer(
         ), 
         ListTile(
           leading: Icon(Icons.map,color: Colors.blueAccent,),
-          title: Text('HeatMap',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+          title: Text('HeatMaps',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
            onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => MapSample()));
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => MenuHeat()));
               }
         ),
         ListTile(
