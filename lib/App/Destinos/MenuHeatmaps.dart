@@ -1,3 +1,4 @@
+import 'package:estudos_flutter/App/Destinos/Heatnotas.dart';
 import 'package:flutter/material.dart';
 
 import 'HeatMap.dart';
@@ -84,7 +85,7 @@ class _MenuHeatState extends State<MenuHeat> {
                         
                         onTap: () {
                           Navigator.of(context).push(new MaterialPageRoute(
-                            builder: (BuildContext context) => MapSample()));
+                            builder: (BuildContext context) => MapSample2()));
                         },
                       ),
                       

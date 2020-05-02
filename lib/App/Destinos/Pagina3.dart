@@ -1,10 +1,10 @@
+import 'package:estudos_flutter/App/Destinos/MenuHeatmaps.dart';
 import 'package:flutter/material.dart';
 import 'Configuracao.dart';
 import 'Mensagem.dart';
 import 'Perfil.dart';
 import 'HomePage.dart';
 import 'Dashboard.dart';
-import 'HeatMap.dart';
 
 class Pagina3 extends StatelessWidget {
 
