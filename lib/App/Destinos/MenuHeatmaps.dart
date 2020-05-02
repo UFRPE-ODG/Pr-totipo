@@ -57,6 +57,39 @@ class _MenuHeatState extends State<MenuHeat> {
                       
                     )
                   ),
+                ),
+                
+                SizedBox(
+                  child: Card(
+                    elevation: 10.0,
+                    color: Color(0xFFbbbbff),
+                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                      
+                      child: ListTile(
+                        
+                        leading: Icon(Icons.place, 
+                          color: Color(0xFF3030ff),
+                          size: 45.0,
+                        ),
+
+                        title: Text('Alunos com notas <= 3',
+                          style: style.copyWith(
+                            color: Color(0xFF3030ff),
+                            fontSize: 23.0,
+                          ),
+                        ),
+                        
+                        onTap: () {
+                          Navigator.of(context).push(new MaterialPageRoute(
+                            builder: (BuildContext context) => MapSample()));
+                        },
+                      ),
+                      
+                    )
+                  ),
                 )
 
               ],
