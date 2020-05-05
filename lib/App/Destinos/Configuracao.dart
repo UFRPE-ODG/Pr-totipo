@@ -42,7 +42,7 @@ class _ConfiguracaoState extends State<Configuracao> {
         }
       ),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0303ff),
+        backgroundColor: Color(0xFF3050ff),
       
         title: Text(
           "Configurações",
@@ -63,8 +63,8 @@ class _ConfiguracaoState extends State<Configuracao> {
           child: ListView(
             children: <Widget>[
               ListTile(
-                leading: Icon(Icons.mic,color: Colors.blueAccent,),
-                title: Text('Som',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+                leading: Icon(Icons.mic,color: Color(0xFF3050ff),),
+                title: Text('Som',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
                 trailing: GestureDetector(
                 onTap: _toggle2,
                 behavior: HitTestBehavior.translucent,
@@ -76,8 +76,8 @@ class _ConfiguracaoState extends State<Configuracao> {
               ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.notifications_none,color: Colors.blueAccent,),
-                title: Text('Notificação',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+                leading: Icon(Icons.notifications_none,color: Color(0xFF3050ff),),
+                title: Text('Notificação',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
                 trailing: GestureDetector(
                 onTap: _toggle3,
                 behavior: HitTestBehavior.translucent,
@@ -91,8 +91,8 @@ class _ConfiguracaoState extends State<Configuracao> {
             
               ListTile(
                 
-                leading: Icon(Icons.lightbulb_outline,color: Colors.blueAccent,),
-                title: Text('Brilho',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+                leading: Icon(Icons.lightbulb_outline,color: Color(0xFF3050ff),),
+                title: Text('Brilho',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
                 trailing: GestureDetector(
                 onTap: _toggle,
                 behavior: HitTestBehavior.translucent,
