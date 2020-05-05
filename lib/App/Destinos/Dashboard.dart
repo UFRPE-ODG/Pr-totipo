@@ -30,7 +30,7 @@ void initState() {
         }
       ),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0303ff),
+        backgroundColor: Color(0xFF3050ff),
       
         title: Text(
           "Dashboard",
@@ -52,13 +52,13 @@ void initState() {
               children: <Widget>[
               
               SizedBox(
-                child: Text("   Analise melhor os gráficos selecionando o botão ao seu lado",style: new TextStyle(color: Colors.blueAccent, fontSize: 20,fontFamily: "Glacial Indifference", ) ,)),
+                child: Text("   Analise melhor os gráficos selecionando o botão ao seu lado",style: new TextStyle(color: Color(0xFF3050ff), fontSize: 20,fontFamily: "Glacial Indifference", ) ,)),
               SizedBox(
                 height: 300,
                  child: Row(
                    children: <Widget>[
                      SizedBox(height: 200,child: Image.asset("imagens/5C.JPG", fit: BoxFit.scaleDown)),
-                     IconButton(icon: Icon(Icons.add_circle_outline,color: Colors.blue,), onPressed: (){
+                     IconButton(icon: Icon(Icons.add_circle_outline,color: Color(0xFF3050ff),), onPressed: (){
                       alert(context);
                      }
                       
@@ -71,7 +71,7 @@ void initState() {
                 height: 20,
                  child: Row(
                    children: <Widget>[
-                      Text(" Projetos   ",style:new TextStyle(color: Colors.blueAccent, fontSize: 20,fontFamily: "Glacial Indifference", ),),
+                      Text(" Projetos   ",style:new TextStyle(color: Color(0xFF3050ff), fontSize: 20,fontFamily: "Glacial Indifference", ),),
                       IconButton(icon: Icon(Icons.list), onPressed:() {Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => SearchPage()));},iconSize: 30,color: Colors.blueAccent,),
                    ]
                  ),
@@ -102,7 +102,7 @@ void initState() {
 
 graf(){
   return BottomAppBar(
-      color: Colors.blueAccent,
+      color: Color(0xFF3050ff),
       child: 
       Row(
         children: <Widget>[
