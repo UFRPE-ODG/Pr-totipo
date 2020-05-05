@@ -23,7 +23,7 @@ class Pagina3 extends StatelessWidget {
         }
       ),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0303ff),
+        backgroundColor: Color(0xFF3050ff),
       
         title: Text(
           "Bem-vindo(a)!",
@@ -79,7 +79,7 @@ class Pagina3 extends StatelessWidget {
                         ),
                         title: Text('Entregar projeto de 2020',
                           style: style.copyWith(
-                          color: Colors.blueAccent,
+                          color: Color(0xFF3050ff),
                           fontSize: 30.0,
                         ),),
                         dense: false,
@@ -123,7 +123,7 @@ class Pagina3 extends StatelessWidget {
                         ),
                         title: Text('Análise de dados 2020',
                           style: style.copyWith(
-                          color: Colors.blueAccent,
+                          color: Color(0xFF3050ff),
                           fontSize: 30.0,
                         ),),
                         dense: false,
@@ -166,8 +166,8 @@ return Drawer(
       padding: EdgeInsets.zero, 
       children: <Widget>[
         UserAccountsDrawerHeader(
-          accountName: Text("João Pedro",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
-           accountEmail: Text("JoaoPedro@gmail.com",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+          accountName: Text("João Pedro",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
+           accountEmail: Text("JoaoPedro@gmail.com",style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
            currentAccountPicture: new GestureDetector(
                 child: new CircleAvatar(
                   backgroundImage: new NetworkImage(fotodeperfil),
@@ -178,40 +178,40 @@ return Drawer(
                image: NetworkImage(imagemdefundo),),
            ),),
         ListTile(
-          leading: Icon(Icons.grain,color: Colors.blueAccent,),
-          title: Text('Dashboard',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+          leading: Icon(Icons.grain,color: Color(0xFF3050ff),),
+          title: Text('Dashboard',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
            onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Dashboard()));
               }
         ), 
         ListTile(
-          leading: Icon(Icons.map,color: Colors.blueAccent,),
-          title: Text('HeatMaps',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+          leading: Icon(Icons.map,color: Color(0xFF3050ff),),
+          title: Text('HeatMaps',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
            onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => MenuHeat()));
               }
         ),
         ListTile(
-          leading: Icon(Icons.message,color: Colors.blueAccent,),
-          title: Text('Messages',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent,)),
+          leading: Icon(Icons.message,color: Color(0xFF3050ff),),
+          title: Text('Messages',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
            onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Mensagem()));
               }
         ),
         ListTile(
-          leading: Icon(Icons.account_circle, color: Colors.blueAccent,),
-          title: Text('Perfil',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent)),
+          leading: Icon(Icons.account_circle, color: Color(0xFF3050ff),),
+          title: Text('Perfil',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff))),
            onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Perfil()));
               }
         ),
         ListTile(
-           title: Text('Configurações',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Colors.blueAccent)),
-           leading: Icon(Icons.settings, color: Colors.blueAccent),
+           title: Text('Configurações',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff))),
+           leading: Icon(Icons.settings, color: Color(0xFF3050ff)),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Configuracao()));
