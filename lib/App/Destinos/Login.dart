@@ -69,12 +69,13 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 
                 children: <Widget>[
+                  
+                  SizedBox(width: 200.0, child: Image.asset("imagens/logo-nome.jpeg", fit: BoxFit.scaleDown)),
 
                   Text(
                     "Criar Nova Conta",
-                    style: style.copyWith(
-                      color: Color(0xFF3030ff),
-                      fontSize: 25.0
+                    style: style.copyWith(   
+                      fontSize: 18.0
                     ),
                   ),
                   
@@ -105,15 +106,15 @@ class _LoginState extends State<Login> {
                             
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff))
+          borderSide: BorderSide(color: Color(0xFF3050ff))
         ),
       ),
 
@@ -141,15 +142,15 @@ class _LoginState extends State<Login> {
                     
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff))
+          borderSide: BorderSide(color: Color(0xFF3050ff))
         ),
       ),
 
@@ -176,15 +177,15 @@ class _LoginState extends State<Login> {
                     
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff))
+          borderSide: BorderSide(color: Color(0xFF3050ff))
         ),
       ),
 
@@ -213,15 +214,15 @@ class _LoginState extends State<Login> {
                     
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff)),
+          borderSide: BorderSide(color: Color(0xFF3050ff)),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF2626ff))
+          borderSide: BorderSide(color: Color(0xFF3050ff))
         ),
       ),
 
@@ -249,7 +250,7 @@ class _LoginState extends State<Login> {
         child: Text("CADASTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
-          color: Color(0xFF3030ff),
+          color: Color(0xFF3050ff),
           fontSize: 20.0,
           fontWeight: FontWeight.bold
           ),
@@ -257,7 +258,7 @@ class _LoginState extends State<Login> {
                       
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: Color(0xFF3030ff), width: 2.5),
+          borderSide: BorderSide(color: Color(0xFF3050ff), width: 2.5),
         ),
 
         onPressed: () => {
