@@ -18,7 +18,7 @@ class _MenuHeatState extends State<MenuHeat> {
       appBar: AppBar(
         title: Text("HeatMaps"),
         centerTitle: true,
-        backgroundColor: Color(0xFF3030ff),
+        backgroundColor: Color(0xFF3050ff),
       ),
 
       body: Center(
@@ -39,13 +39,13 @@ class _MenuHeatState extends State<MenuHeat> {
                       child: ListTile(
                         
                         leading: Icon(Icons.place, 
-                          color: Color(0xFF3030ff),
+                          color: Color(0xFF3050ff),
                           size: 45.0,
                         ),
 
                         title: Text('Alunos Por Cidade',
                           style: style.copyWith(
-                            color: Color(0xFF3030ff),
+                            color: Color(0xFF3050ff),
                             fontSize: 23.0,
                           ),
                         ),
@@ -72,13 +72,13 @@ class _MenuHeatState extends State<MenuHeat> {
                       child: ListTile(
                         
                         leading: Icon(Icons.place, 
-                          color: Color(0xFF3030ff),
+                          color: Color(0xFF3050ff),
                           size: 45.0,
                         ),
 
                         title: Text('Alunos com notas <= 3',
                           style: style.copyWith(
-                            color: Color(0xFF3030ff),
+                            color: Color(0xFF3050ff),
                             fontSize: 23.0,
                           ),
                         ),
