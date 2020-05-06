@@ -22,6 +22,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
       backgroundColor: Colors.white,
 
       body: Center(
+        SingleChildScrollView(
         child: Container(
           height: 500.0,
           child: Center(
@@ -46,7 +47,8 @@ class _WidgetLoginState extends State<WidgetLogin> {
             ),
           )
         ),
-      ) 
+      )
+     )
     );  
   }
 
