@@ -5,6 +5,7 @@ import 'Mensagem.dart';
 import 'Perfil.dart';
 import 'HomePage.dart';
 import 'Dashboard.dart';
+import 'charts_screens/dashboardPage.dart';
 
 class Pagina3 extends StatelessWidget {
 
@@ -182,7 +183,7 @@ return Drawer(
           title: Text('Dashboard',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
            onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Dashboard()));
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => DashboardPage()));
               }
         ), 
         ListTile(
