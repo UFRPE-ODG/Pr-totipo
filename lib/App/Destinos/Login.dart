@@ -59,6 +59,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
+        SingleChildScroolView(
         child: Container(
           height: 500.0,
           child: Center(
@@ -94,6 +95,7 @@ class _LoginState extends State<Login> {
             ),
           )
         ),
+       ),
       ),
     );
   }
