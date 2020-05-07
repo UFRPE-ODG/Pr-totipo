@@ -22,7 +22,6 @@ class _WidgetLoginState extends State<WidgetLogin> {
       backgroundColor: Colors.white,
 
       body: Center(
-        child: SingleChildScrollView(
         child: Container(
           height: 500.0,
           child: Center(
@@ -34,7 +33,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                 
                 children: <Widget>[
 
-                  SizedBox(height: 200.0, width: 270.0, child: Image.asset("imagens/logo-nome.jpeg", fit: BoxFit.scaleDown)),
+                  SizedBox(height: 240.0, child: Image.asset("imagens/logo-public.png", fit: BoxFit.scaleDown)),
                   
                   SizedBox(width: 300.0, child: buildTextLogin()),
 
@@ -47,8 +46,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
             ),
           )
         ),
-      )
-     )
+      ) 
     );  
   }
 
@@ -60,15 +58,15 @@ class _WidgetLoginState extends State<WidgetLogin> {
                  
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF3050ff)),
+          borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF3050ff)),
+          borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF3050ff))),
+          borderSide: BorderSide(color: Color(0xFF2626ff))),
       ),
 
       style: style.copyWith(color: Colors.black),
@@ -95,15 +93,15 @@ class _WidgetLoginState extends State<WidgetLogin> {
                  
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF3050ff)),
+          borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF3050ff)),
+          borderSide: BorderSide(color: Color(0xFF2626ff)),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0), 
-          borderSide: BorderSide(color: Color(0xFF3050ff))),
+          borderSide: BorderSide(color: Color(0xFF2626ff))),
       ),
 
       style: style.copyWith(color: Colors.black),
@@ -128,7 +126,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
       
       child: RaisedButton(
         
-        color: Color(0xFF3050ff),
+        color: Color(0xFF3030ff),
         child: Text("ENTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(

@@ -4,7 +4,7 @@ import 'package:estudos_flutter/main.dart';
 import 'Login.dart';
 import 'Pagina3.dart';
 
-TextStyle sty = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0, color: Color(0xFF3050ff));
+TextStyle sty = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0, color: Colors.blueAccent);
 
 class Perfil extends StatelessWidget {
   @override
