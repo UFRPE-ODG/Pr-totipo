@@ -1,10 +1,11 @@
-import 'package:estudos_flutter/App/Destinos/MenuHeatmaps.dart';
+import 'MenuHeatmaps.dart';
 import 'package:flutter/material.dart';
 import 'Configuracao.dart';
 import 'Mensagem.dart';
 import 'Perfil.dart';
 import 'HomePage.dart';
-import 'Dashboard.dart';
+import 'charts_screens/dashboardPage.dart';
+import 'package:estudos_flutter/App/ClassesAParte/Cartoes.dart';
 
 class Pagina3 extends StatelessWidget {
 
@@ -37,111 +38,134 @@ class Pagina3 extends StatelessWidget {
        
       ),
       drawer: menu(context), 
-      body: Center( 
-        child: Container(
-          height: 500.0,
+      body: Example01(),
+    );
+  }
+}
+/*
+  child: Container(
+          height: 600.0,
           color: Colors.white,
           
           child: Column(
             children: <Widget>[
-              
-              /*SizedBox(
-                width: 300,
-                child: Text(
-                  "Esse é uma visão de como será a plataforma do ODG",
-                  style: style.copyWith(
-                    color: Colors.blueAccent,
-                    fontSize: 30.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),*/
+              SingleChildScrollView(
+                child: 
+                 Row(
+                  children: <Widget>[
+                   SizedBox(
+                     width: 200,
+                      height: 200,
+                      child: Card(
+                        elevation: 0,
+                        color: Color(0xFFffa92b),
+                        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 100,
+                              child: Icon(Icons.dashboard,size: 40,),
+                              
+                            ),
+                            Text("Dashboard", style: style.copyWith(
+                              color: Colors.white,
+                              fontSize: 30.0,
+                             ),
+                            ),
+                          ],
+                        ),
+                        clipBehavior: null,
+                        
+                      ),
+
+                    ),
+                     SizedBox(
+                      width: 190,
+                      height: 200,
+                      child: Card(
+                        elevation: 0,
+                        color: Color(0xFFffa92b),
+                        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 100,
+                              child: Icon(Icons.map,size: 40,),
+                            ),
+                            Text('Heatmap',
+                              style: style.copyWith(
+                              color: Colors.white,
+                              fontSize: 30.0,
+                            ),),
+                          ],
+                        ),
+                        clipBehavior: null,
+                        
+                      ),
+
+                    ),
+                    
+                  
+                ],
+              ),
+              ),
               SizedBox(
                 height: 200,
                 child: Card(
-                   elevation: 10,
-                    color: Colors.white,
+                   elevation: 0,
+                    color: Color(0xFF3003ff),
                     margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                              height: 100,
+                              child: Icon(Icons.star,color: Colors.yellowAccent,size: 40,),
+                            ),
+                          ListTile(
+                          title: Text('Entregar projeto de 2020',
+                            style: style.copyWith(
+                            color: Colors.white,
+                            fontSize: 30.0,
+                          ),),
+                          dense: false,
 
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                      child: ListTile(
-                      
-                        leading: GestureDetector(
-                          behavior: HitTestBehavior.translucent,
-                          onTap: () {},
-                          child: Container(
-                            width: 48,
-                            height: 48,
-                            padding: EdgeInsets.symmetric(vertical: 4.0),
-                            alignment: Alignment.center,
-                          ),
-                        ),
-                        title: Text('Entregar projeto de 2020',
-                          style: style.copyWith(
-                          color: Color(0xFF3050ff),
-                          fontSize: 30.0,
-                        ),),
-                        dense: false,
-                        trailing: SizedBox(
-                          width: 40.0,
-                          height: 40.0,   
-                          child: Center(
-                            child:  IconButton(icon: Icon(Icons.star,color: Colors.yellowAccent),iconSize: 40, onPressed: null,),
+                          onTap: () {
                             
-                          ),
+                          },
                         ),
-
-                        onTap: () {
-                          
-                        },
-                      ),
                       
-                    ), 
+                    ],
+                    ) 
                 ),
               ),
               SizedBox(
                 height: 200,
                 child: Card(
-                   elevation: 10,
-                    color: Colors.white,
+                   elevation: 0,
+                    color: Color(0xFF3003ff),
                     margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                              height: 100,
+                              child: Icon(Icons.star,color: Colors.yellowAccent,size: 40,),
+                            ),
+                          ListTile(
+                          title: Text('Análise de dados 2020',
+                            style: style.copyWith(
+                            color: Colors.white,
+                            fontSize: 30.0,
+                            fontFamily: "Glacial Indifference"
+                          ),),
+                          dense: false,
 
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                      child: ListTile(
-                      
-                        leading: GestureDetector(
-                          behavior: HitTestBehavior.translucent,
-                          onTap: () {},
-                          child: Container(
-                            width: 48,
-                            height: 48,
-                            padding: EdgeInsets.symmetric(vertical: 4.0),
-                            alignment: Alignment.center,
-                          ),
-                        ),
-                        title: Text('Análise de dados 2020',
-                          style: style.copyWith(
-                          color: Color(0xFF3050ff),
-                          fontSize: 30.0,
-                        ),),
-                        dense: false,
-                        trailing: SizedBox(
-                          width: 40.0,
-                          height: 40.0,   
-                          child: Center(
-                            child:  IconButton(icon: Icon(Icons.star,color: Colors.yellowAccent),iconSize: 40, onPressed: null,),
+                          onTap: () {
                             
-                          ),
+                          },
                         ),
-
-                        onTap: () {
-                          
-                        },
-                      ),
                       
-                    ), 
+                    ],
+                    ) 
                 ),
               ),
               
@@ -149,12 +173,7 @@ class Pagina3 extends StatelessWidget {
           )
         )
         
-      )
-      
-    );
-  }
-}
-
+*/
 
 var imagemdefundo = "https://img00.deviantart.net/35f0/i/2015/018/2/6/low_poly_landscape__the_river_cut_by_bv_designs-d8eib00.jpg";
 var fotodeperfil = "https://yt3.ggpht.com/-2_2skU9e2Cw/AAAAAAAAAAI/AAAAAAAAAAA/6NpH9G8NWf4/s900-c-k-no-mo-rj-c0xffffff/photo.jpg";
@@ -182,7 +201,7 @@ return Drawer(
           title: Text('Dashboard',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff),)),
            onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Dashboard()));
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => DashboardPage()));
               }
         ), 
         ListTile(
