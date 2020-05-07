@@ -60,7 +60,7 @@ class _SearchPageState extends State<SearchPage> {
 
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add,size: 40,), 
-        backgroundColor: Colors.orangeAccent ,
+        backgroundColor: Colors.white ,
 
         onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => AddProjeto()));
@@ -68,7 +68,7 @@ class _SearchPageState extends State<SearchPage> {
       ),
 
       appBar: new AppBar(    centerTitle: true,
-        backgroundColor: Color(0xFF0303ff),
+        backgroundColor: Color(0xFF3050ff),
         title: !isSearching 
           ? Text("Pesquisa")
           : TextField(
