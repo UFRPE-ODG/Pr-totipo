@@ -25,7 +25,7 @@ class _MensagemState extends State<Mensagem> {
         }
       ),
       appBar: AppBar(
-        backgroundColor: Color(0xFF03050ff),
+        backgroundColor: Color(0xFF0303ff),
       
         title: Text(
           "Mensagens",
