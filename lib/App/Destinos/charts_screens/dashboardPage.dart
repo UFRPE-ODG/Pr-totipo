@@ -26,12 +26,20 @@ Material cardDisplay(Widget chart) {
 }
 
 class DashboardPage extends StatelessWidget {
+
+  TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF3050FF) ,
-        title: Text("Dashboard"),
+        title: Text("Dashboard",
+          style: style.copyWith(
+            fontSize: 25.0,
+          ),
+        ),
       ),
       body: StaggeredGridView.count(
         crossAxisCount: 2,
