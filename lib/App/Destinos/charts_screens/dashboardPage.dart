@@ -13,9 +13,9 @@ import 'lineChartPage.dart';
 Material cardDisplay(Widget chart) {
   return Material(
     color: Colors.white,
-    elevation: 4.0,
+    elevation: 2.0,
     shadowColor: Color(0x802196F3),
-    borderRadius: BorderRadius.circular(24.0),
+    borderRadius: BorderRadius.circular(4.0),
     child: Center(
       child: Padding(
         padding: EdgeInsets.all(8.0),
