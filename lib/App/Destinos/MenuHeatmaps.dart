@@ -16,8 +16,11 @@ class _MenuHeatState extends State<MenuHeat> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HeatMaps"),
-        centerTitle: true,
+        title: Text("HeatMaps",
+          style: style.copyWith(
+            fontSize: 25.0,
+          ),
+        ),
         backgroundColor: Color(0xFF3050ff),
       ),
 

@@ -49,9 +49,7 @@ class _ConfiguracaoState extends State<Configuracao> {
           style: style.copyWith(
             color: Colors.white,
             fontSize: 25.0,
-            fontWeight: FontWeight.bold
           ),
-          textAlign: TextAlign.center,
         ),
 
       ),

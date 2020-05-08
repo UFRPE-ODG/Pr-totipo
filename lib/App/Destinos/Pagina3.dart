@@ -1,3 +1,5 @@
+import 'package:estudos_flutter/App/Destinos/Listagem.dart';
+
 import 'MenuHeatmaps.dart';
 import 'package:flutter/material.dart';
 import 'Configuracao.dart';
@@ -31,9 +33,8 @@ class Pagina3 extends StatelessWidget {
           style: style.copyWith(
             color: Colors.white,
             fontSize: 25.0,
-            fontWeight: FontWeight.bold
           ),
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.start,
         ),
        
       ),
@@ -229,14 +230,20 @@ return Drawer(
               }
         ),
         ListTile(
+          leading: Icon(Icons.search, color: Color(0xFF3050ff),),
+          title: Text('Projetos',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff))),
+           onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => SearchPage()));
+              }
+        ),
+        ListTile(
            title: Text('Configurações',style: TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0,color: Color(0xFF3050ff))),
            leading: Icon(Icons.settings, color: Color(0xFF3050ff)),
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => Configuracao()));
               }
-         
-          
         ),
 
       ],

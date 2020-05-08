@@ -8,6 +8,7 @@ import 'package:estudos_flutter/App/ClassesAParte/CustomDialog.dart';
  
 List<Projetos> meusProjetos = new List<Projetos>();
 List<String> nomeProj = new List<String>();
+
 class SearchPage extends StatefulWidget {
   SearchPage({Key key, this.title}) : super(key: key);
   final String title;
@@ -60,17 +61,21 @@ class _SearchPageState extends State<SearchPage> {
 
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add,size: 40,), 
-        backgroundColor: Colors.white ,
+        backgroundColor: Colors.amber ,
 
         onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => AddProjeto()));
         },
       ),
 
-      appBar: new AppBar(    centerTitle: true,
+      appBar: new AppBar(
         backgroundColor: Color(0xFF3050ff),
         title: !isSearching 
-          ? Text("Pesquisa")
+          ? Text("Pesquisa",
+              style: style.copyWith(
+                fontSize: 25.0, 
+              ),
+            )
           : TextField(
             onChanged: (value) {
               filterSearchResults(value);
