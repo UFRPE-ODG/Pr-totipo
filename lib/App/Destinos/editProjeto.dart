@@ -1,28 +1,19 @@
-
-import 'Listagem.dart';
 import 'package:estudos_flutter/App/ClassesAParte/Projetos.dart';
+import 'package:estudos_flutter/App/Destinos/Listagem.dart';
+import 'package:estudos_flutter/App/Destinos/addProjeto.dart';
 import 'package:flutter/material.dart';
 
-var projnovo = new Projetos();
-var listaprojetos = new List<Projetos>();
+class editProjeto extends StatelessWidget {
 
-String nome;
-String des;
-int nume;
-int porcen;
-
-
-class AddProjeto extends StatefulWidget {
-  @override
-  _AddProjetoState createState() => _AddProjetoState();
-  
-}
-class _AddProjetoState extends State<AddProjeto> {
-  
-  GlobalKey<FormState> formkey2 = GlobalKey<FormState>();  
-  
+  final Projetos project;
   TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
+  GlobalKey<FormState> formkey2 = GlobalKey<FormState>();  
 
+
+  editProjeto(this.project);
+
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -39,7 +30,7 @@ class _AddProjetoState extends State<AddProjeto> {
                 children: <Widget>[
 
                   Text(
-                    "Criar Novo projeto",
+                    "Editar Projeto",
                     style: style.copyWith(
                       color: Color(0xFF3050ff),
                       fontSize: 25.0
@@ -54,7 +45,7 @@ class _AddProjetoState extends State<AddProjeto> {
 
                   SizedBox(width: 300.0, child:campoConfirmarSenha()),
 
-                  SizedBox(width: 250.0, child:botaoFazerCadastro()),            
+                  SizedBox(width: 250.0, child:botaoFazerEdicao()),            
 
                 ],
               ),
@@ -64,7 +55,7 @@ class _AddProjetoState extends State<AddProjeto> {
       ),
     );
   }
-  
+
   campoLoginCadastro() {
     return TextFormField(
       decoration: InputDecoration(
@@ -204,15 +195,14 @@ class _AddProjetoState extends State<AddProjeto> {
     );
   }
 
-  botaoFazerCadastro(){
+  botaoFazerEdicao(){
     return ButtonTheme(
-      minWidth: MediaQuery.of(context).size.width,
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     
       child: RaisedButton(
         color: Color(0xFF3050ff),
 
-        child: Text("Criar",
+        child: Text("Concluir",
           textAlign: TextAlign.center,
           style: style.copyWith(
           color: Colors.white,
@@ -225,22 +215,12 @@ class _AddProjetoState extends State<AddProjeto> {
         ),
 
         onPressed: () => {
-                      
-          formkey2.currentState.validate(),
-          projnovo.nome = nome,
-          projnovo.descricao = des,
-          projnovo.pessoasParticipando = nume,
-          projnovo.porcentagemFeita = porcen,
-
-          listaprojetos.add(projnovo),
-
-          Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => SearchPage())),
+                  
+          //Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
           
-
         },
       ),
     );
   }
 
 }
-

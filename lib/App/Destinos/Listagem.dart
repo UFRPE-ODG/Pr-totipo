@@ -1,4 +1,5 @@
 import 'package:estudos_flutter/App/Destinos/Configuracao.dart';
+import 'package:estudos_flutter/App/Destinos/editProjeto.dart';
 import 'package:flutter/material.dart';
 import 'WidgetLoginState.dart';
 import 'Projeto.dart';
@@ -172,8 +173,20 @@ class _SearchPageState extends State<SearchPage> {
                               child: Icon(Icons.edit),
                               elevation: 0.0,
                               onPressed: () {
-                                _dialogAddRecDesp(context);
-                                
+                                var pass = new Projetos();
+
+                                for(int i = 0; i<meusProjetos.length;i++){
+                                  if(meusProjetos[i].nome.contains(items[index])){
+                                    pass = meusProjetos[i];
+                                  }
+                                }
+
+                                Navigator.push(context, 
+                                  MaterialPageRoute(
+                                    builder: (context) => editProjeto(pass)
+                                  )
+                                );
+
                               },
                             ),
                           ),
