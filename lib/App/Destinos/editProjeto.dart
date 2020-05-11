@@ -17,6 +17,18 @@ class editProjeto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Color(0xFF03050ff),
+      
+        title: Text(
+          "Editar Projeto",
+          style: style.copyWith(
+            color: Colors.white,
+            fontSize: 25.0,
+          ),
+          textAlign: TextAlign.start,
+        ),
+      ),
       body: Center(
         child: Container(
           height: 500.0,

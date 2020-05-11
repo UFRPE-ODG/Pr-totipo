@@ -19,6 +19,19 @@ class Perfil extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(builder: (context) => Pagina3()));
         }
       ),
+       appBar: AppBar(
+        backgroundColor: Color(0xFF3050ff),
+      
+        title: Text(
+          "Perfil",
+          style: style.copyWith(
+            color: Colors.white,
+            fontSize: 25.0,
+          ),
+          textAlign: TextAlign.start,
+        ),
+       
+      ),
       body: ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
