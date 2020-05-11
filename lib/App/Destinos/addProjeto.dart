@@ -54,7 +54,7 @@ class _AddProjetoState extends State<AddProjeto> {
 
                   SizedBox(width: 300.0, child:campoConfirmarSenha()),
 
-                  SizedBox(width: 250.0, child:botaoFazerCadastro()),            
+                  SizedBox(width: 300.0, child:botaoFazerCadastro()),            
 
                 ],
               ),
@@ -211,13 +211,12 @@ class _AddProjetoState extends State<AddProjeto> {
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     
       child: RaisedButton(
-        color: Colors.white,
+        color: Color(0xFF3050ff),
         child: Text("CRIAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
-              color: Color(0xFF3050ff),
+              color: Colors.white,
               fontSize: 20.0,
-              fontWeight: FontWeight.bold
           ),
         ),
 

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:estudos_flutter/App/ClassesAParte/Aluno.dart';
+import 'package:estudos_flutter/App/Destinos/Configuracao.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_heatmap/google_maps_flutter_heatmap.dart';
 import 'HeatMap.dart';
@@ -90,6 +91,17 @@ class MapSample2State extends State<MapSample2> {
           
         },
         
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title:   Text(
+          "Alunos com média igual ou abaixo de 3",
+          style: style.copyWith(
+            color: Colors.white,
+            fontSize: 25.0,
+          ),
+          textAlign: TextAlign.start,
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _addHeatmap,

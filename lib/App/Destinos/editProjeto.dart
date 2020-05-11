@@ -45,7 +45,7 @@ class editProjeto extends StatelessWidget {
 
                   SizedBox(width: 300.0, child:campoConfirmarSenha()),
 
-                  SizedBox(width: 250.0, child:botaoFazerEdicao()),            
+                  SizedBox(width: 300.0, child:botaoFazerEdicao()),            
 
                 ],
               ),
@@ -200,13 +200,13 @@ class editProjeto extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     
       child: RaisedButton(
-        color: Colors.white,
+        color: Color(0xFF3050ff),
         child: Text("EDITAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
-              color: Color(0xFF3050ff),
+              color: Colors.white,
               fontSize: 20.0,
-              fontWeight: FontWeight.bold
+
           ),
         ),
 

@@ -32,8 +32,8 @@ class _MenuHeatState extends State<MenuHeat> {
                 
                 SizedBox(
                   child: Card(
-                    elevation: 10.0,
-                    color: Color(0xFFbbbbff),
+                    elevation: 0.0,
+                    color: Colors.white,
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
 
                     child: Padding(
@@ -42,14 +42,13 @@ class _MenuHeatState extends State<MenuHeat> {
                       child: ListTile(
                         
                         leading: Icon(Icons.place, 
-                          color: Color(0xFF3050ff),
+                          color: Colors.blueAccent,
                           size: 45.0,
                         ),
 
                         title: Text('Alunos Por Cidade',
                           style: style.copyWith(
-                            color: Color(0xFF3050ff),
-                            fontSize: 23.0,
+                            fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 20
                           ),
                         ),
                         
@@ -65,8 +64,8 @@ class _MenuHeatState extends State<MenuHeat> {
                 
                 SizedBox(
                   child: Card(
-                    elevation: 10.0,
-                    color: Color(0xFFbbbbff),
+                    elevation: 0.0,
+                    color: Colors.white,
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
 
                     child: Padding(
@@ -75,14 +74,13 @@ class _MenuHeatState extends State<MenuHeat> {
                       child: ListTile(
                         
                         leading: Icon(Icons.place, 
-                          color: Color(0xFF3050ff),
+                          color: Colors.blueAccent,
                           size: 45.0,
                         ),
 
                         title: Text('Alunos com notas <= 3',
                           style: style.copyWith(
-                            color: Color(0xFF3050ff),
-                            fontSize: 23.0,
+                            fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 20
                           ),
                         ),
                         

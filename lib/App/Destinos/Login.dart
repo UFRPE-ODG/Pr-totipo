@@ -75,9 +75,10 @@ class _LoginState extends State<Login> {
 
                       Text(
                         "Criar Nova Conta",
-                        style: style.copyWith(
-                            fontSize: 18.0
-                        ),
+                      style: style.copyWith(
+                      color: Color(0xFF3050ff),
+                      fontSize: 25.0
+                    ),
                       ),
 
                       SizedBox(width: 300.0, child: campoLoginCadastro()),
@@ -248,13 +249,13 @@ class _LoginState extends State<Login> {
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
 
       child: RaisedButton(
-        color: Colors.white,
+        color: Color(0xFF3050ff),
         child: Text("CADASTRAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
-              color: Color(0xFF3050ff),
+              color: Colors.white,
               fontSize: 20.0,
-              fontWeight: FontWeight.bold
+
           ),
         ),
 

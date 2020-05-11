@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:estudos_flutter/App/ClassesAParte/Aluno.dart';
+import 'package:estudos_flutter/App/Destinos/Configuracao.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_heatmap/google_maps_flutter_heatmap.dart';
 bool marcadores = true; 
@@ -169,6 +170,17 @@ class MapSampleState extends State<MapSample> {
           
         },
         
+      ),
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title:   Text(
+          "Alunos abaixo da média por cidade",
+          style: style.copyWith(
+            color: Colors.white,
+            fontSize: 25.0,
+          ),
+          textAlign: TextAlign.start,
+        ),
       ),
       /*floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,
