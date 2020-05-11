@@ -1,5 +1,7 @@
+
 import 'package:estudos_flutter/App/Destinos/Heatnotas.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'HeatMap.dart';
 
@@ -31,72 +33,69 @@ class _MenuHeatState extends State<MenuHeat> {
               children: <Widget>[
                 
                 SizedBox(
-                  child: Card(
-                    elevation: 0.0,
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.white70, width: 1),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    margin: EdgeInsets.all(20.0),
- 
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                      
-                      child: ListTile(
-                        
-                        leading: Icon(Icons.place, 
-                          color: Colors.blueAccent,
-                          size: 45.0,
-                        ),
-
-                        title: Text('Alunos Por Cidade',
-                          style: style.copyWith(
-                            fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 20
-                          ),
-                        ),
-                        
-                        onTap: () {
-                          Navigator.of(context).push(new MaterialPageRoute(
+                 child: Card(
+                  color: Colors.white,
+                  child: new InkWell(
+                  onTap: () {
+                   Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => MapSample()));
-                        },
-                      ),
-                      
-                    )
+                  },
+                  child: new Center(
+                    child: Column(
+                      children: <Widget>[
+                        new Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: SizedBox(
+                            height: 100,
+                            child: new Icon(
+                            Icons.location_on,
+                            color: Colors.blueAccent,
+                            size: 50,
+                          ),)
+                        ),
+                        SizedBox(
+                          height: 50,
+                          child: Text("Alunos por cidade", style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 30)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                
+              ),
+                      
+            ),
                 SizedBox(
-                  child: Card(
-                    elevation: 0.0,
-                    color: Colors.white,
-                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                      
-                      child: ListTile(
-                        
-                        leading: Icon(Icons.place, 
-                          color: Colors.blueAccent,
-                          size: 45.0,
-                        ),
-
-                        title: Text('Alunos com notas <= 3',
-                          style: style.copyWith(
-                            fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 20
-                          ),
-                        ),
-                        
-                        onTap: () {
-                          Navigator.of(context).push(new MaterialPageRoute(
+                 child: Card(
+                  color: Colors.white,
+                  child: new InkWell(
+                  onTap: () {
+                   Navigator.of(context).push(new MaterialPageRoute(
                             builder: (BuildContext context) => MapSample2()));
-                        },
-                      ),
-                      
-                    )
+                  },
+                  child: new Center(
+                    child: Column(
+                      children: <Widget>[
+                        new Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: SizedBox(
+                            height: 100,
+                            child: new Icon(
+                            Icons.location_on,
+                            color: Colors.blueAccent,
+                            size: 50,
+                          ),)
+                        ),
+                        SizedBox(
+                          height: 50,
+                          child: Text("Alunos com média <=3", style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueAccent,fontSize: 30)),
+                        ),
+                      ],
+                    ),
                   ),
-                )
+                ),
+              ),
+                      
+            ),
 
               ],
             ),
