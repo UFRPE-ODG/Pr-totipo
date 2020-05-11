@@ -1,3 +1,4 @@
+import 'package:estudos_flutter/App/Destinos/WidgetLoginState.dart';
 import 'package:flutter/material.dart';
 import 'package:estudos_flutter/App/ClassesAParte/Pessoa.dart';
 import 'HomePage.dart';
@@ -277,7 +278,7 @@ class _LoginState extends State<Login> {
               debugPrint("Cadastrado com sucesso"),
             },
             if(confirm == _password){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()))
+              Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetLogin()))
             }
 
 

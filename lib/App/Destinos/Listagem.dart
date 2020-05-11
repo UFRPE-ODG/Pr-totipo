@@ -9,6 +9,8 @@ import 'package:estudos_flutter/App/ClassesAParte/CustomDialog.dart';
  
 List<Projetos> meusProjetos = new List<Projetos>();
 List<String> nomeProj = new List<String>();
+List<String> descrProj = new List<String>();
+var items = List<String>();
 
 class SearchPage extends StatefulWidget {
   SearchPage({Key key, this.title}) : super(key: key);
@@ -16,7 +18,7 @@ class SearchPage extends StatefulWidget {
   @override
   _SearchPageState createState() => new _SearchPageState();
 }
-  var items = List<String>();
+  
 class _SearchPageState extends State<SearchPage> {
   TextEditingController editingController = TextEditingController(); 
   TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
@@ -131,93 +133,75 @@ class _SearchPageState extends State<SearchPage> {
 
         ],
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 10,
-                    color: Colors.blue[200],
-                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
 
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                      child: ListTile(
+          return Container(
+            margin: EdgeInsets.only(top: 20),
+            child: ListTile(          
+                leading: Icon(Icons.assignment, size: 50, color: Colors.black,),
+                
+                title: Text('${items[index]}',   
+                  style: style.copyWith(
+                    fontSize: 20.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                
+                subtitle: Text("${descrProj[index]}"),
+                dense: true,
+                
+                trailing: SizedBox(
+                  width: 40.0,
+                  height: 40.0,   
+                  child: Center(
+                    child: RaisedButton( 
+                      color: Colors.white,
+                      child: Icon(Icons.edit, color: Colors.black,),
+                      elevation: 0.0,
                       
-                        leading: GestureDetector(
-                          behavior: HitTestBehavior.translucent,
-                          onTap: () {},
-                          child: Container(
-                            width: 48,
-                            height: 48,
-                            padding: EdgeInsets.symmetric(vertical: 4.0),
-                            alignment: Alignment.center,
-                            child: Icon(Icons.assignment, 
-                              color: Colors.black,
-                              size: 50.0,
-                            )
-                          ),
-                        ),
-                        title: Text('${items[index]}'),
-                        dense: false,
-                        trailing: SizedBox(
-                          width: 40.0,
-                          height: 40.0,   
-                          child: Center(
-                            child: RaisedButton( 
-                              color: Colors.blue[200],
-                              child: Icon(Icons.edit),
-                              elevation: 0.0,
-                              onPressed: () {
-                                var pass = new Projetos();
+                      onPressed: () {
+                        var pass = new Projetos();
 
-                                for(int i = 0; i<meusProjetos.length;i++){
-                                  if(meusProjetos[i].nome.contains(items[index])){
-                                    pass = meusProjetos[i];
-                                  }
-                                }
-
-                                Navigator.push(context, 
-                                  MaterialPageRoute(
-                                    builder: (context) => editProjeto(pass)
-                                  )
-                                );
-
-                              },
-                            ),
-                          ),
-                        ),
-
-                        onTap: () {
-                          var pass = new Projetos();
-
-                          for(int i = 0; i<meusProjetos.length;i++){
-                            if(meusProjetos[i].nome.contains(items[index])){
-                              pass = meusProjetos[i];
-                            }
+                        for(int i = 0; i<meusProjetos.length;i++){
+                          if(meusProjetos[i].nome.contains(items[index])){
+                            pass = meusProjetos[i];
                           }
+                        }
 
-                          Navigator.push(context, 
-                            MaterialPageRoute(
-                              builder: (context) => DetailProject(pass)
-                            )
-                            
-                          );
-                          
-                        },
-                      )
-                    ), 
+                        Navigator.push(context, 
+                          MaterialPageRoute(
+                            builder: (context) => editProjeto(pass)
+                          )
+                        );
+
+                      },
+                    ),
+                  ),
+                ),
+
+                onTap: () {
+                  var pass = new Projetos();
+
+                  for(int i = 0; i<meusProjetos.length;i++){
+                    if(meusProjetos[i].nome.contains(items[index])){
+                      pass = meusProjetos[i];
+                    }
+                  }
+
+                  Navigator.push(context, 
+                    MaterialPageRoute(
+                      builder: (context) => DetailProject(pass)
+                    )
                   );
+                            
                 },
-              ),
             ),
-          ],
-        ),
-      ),
+          );                              
+        },
+      ),              
     );
   }
 }
@@ -241,50 +225,63 @@ lista(){
   notas3.nome = "Análise de Produtividade de 2019";
   notas4.nome = "Recolhimento de dados de 2020";
 
- notas1.pessoasParticipando = 3;
- notas2.pessoasParticipando = 5;
- notas3.pessoasParticipando = 7;
- notas4.pessoasParticipando = 3;
+  notas1.descricao = "Projeto sobre o Desenvolvimento de graficos";
+  notas2.descricao = "Detalhes da análise de produtividade de todo o ano de 2018";
+  notas3.descricao = "Detalhes da análise de produtividade de todo o ano de 2019";
+  notas4.descricao =  "Detalhes do recolhimento dos dados do ano de 2020";
 
- notas1.porcentagemFeita = 40;
- notas2.porcentagemFeita = 70;
- notas3.porcentagemFeita = 70;
- notas4.porcentagemFeita = 40;
+  notas1.pessoasParticipando = 3;
+  notas2.pessoasParticipando = 5;
+  notas3.pessoasParticipando = 7;
+  notas4.pessoasParticipando = 3;
+
+  notas1.porcentagemFeita = 40;
+  notas2.porcentagemFeita = 70;
+  notas3.porcentagemFeita = 70;
+  notas4.porcentagemFeita = 40;
+
+  meusProjetos.add(notas1);
+  meusProjetos.add(notas2);
+  meusProjetos.add(notas3);
+  meusProjetos.add(notas4);
 
 
-    meusProjetos.add(notas1);
-    meusProjetos.add(notas2);
-    meusProjetos.add(notas3);
-    meusProjetos.add(notas4);
 
-    Projetos notas6 = new Projetos();
-    Projetos notas7 = new Projetos();
-    Projetos notas8 = new Projetos();
-    Projetos notas9 = new Projetos();
+  Projetos notas6 = new Projetos();
+  Projetos notas7 = new Projetos();
+  Projetos notas8 = new Projetos();
+  Projetos notas9 = new Projetos();
 
-    notas6.nome = "Desenvolvimento de Funcionabilidades";
-    notas7.nome = "Análise de Produtividade de 2017";
-    notas8.nome = "Análise de Produtividade de 2020";
-    notas9.nome = "Recolhimento de dados de 2018";
+  notas6.nome = "Desenvolvimento de Funcionabilidades";
+  notas7.nome = "Análise de Produtividade de 2017";
+  notas8.nome = "Análise de Produtividade de 2020";
+  notas9.nome = "Recolhimento de dados de 2018";
 
-    notas6.pessoasParticipando = 8;
-    notas7.pessoasParticipando = 8;
-    notas8.pessoasParticipando = 7;
-    notas9.pessoasParticipando = 3;
+  notas6.descricao = "Projeto sobre o Desenvolvimento de funcionalidades";
+  notas7.descricao = "Detalhes da análise de produtividade de todo o ano de 2017";
+  notas8.descricao = "Detalhes da análise de produtividade de todo o ano de 2020";
+  notas9.descricao = "Detalhes do recolhimento dos dados do ano de 2018";
 
-    notas6.porcentagemFeita = 40;
-    notas7.porcentagemFeita = 60;
-    notas8.porcentagemFeita = 60;
-    notas9.porcentagemFeita = 40;
+  notas6.pessoasParticipando = 8;
+  notas7.pessoasParticipando = 8;
+  notas8.pessoasParticipando = 7;
+  notas9.pessoasParticipando = 3;
+
+  notas6.porcentagemFeita = 40;
+  notas7.porcentagemFeita = 60;
+  notas8.porcentagemFeita = 60;
+  notas9.porcentagemFeita = 40;
     
-    meusProjetos.add(notas6);
-    meusProjetos.add(notas7);
-    meusProjetos.add(notas8);
-    meusProjetos.add(notas9);
+  meusProjetos.add(notas6);
+  meusProjetos.add(notas7);
+  meusProjetos.add(notas8);
+  meusProjetos.add(notas9);
 
-    for (int i = 0; i<meusProjetos.length; i++){
-      nomeProj.add(meusProjetos[i].nome);
-    }
+  for (int i = 0; i<meusProjetos.length; i++){
+    nomeProj.add(meusProjetos[i].nome);
+    descrProj.add(meusProjetos[i].descricao);
+  }
     
-    items.addAll(nomeProj);
+  items.addAll(nomeProj);
 }
+

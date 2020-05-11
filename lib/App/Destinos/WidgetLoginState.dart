@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:estudos_flutter/App/ClassesAParte/Pessoa.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 import 'Pagina3.dart';
 import 'HomePage.dart';
 import 'Login.dart';
@@ -13,10 +15,16 @@ class _WidgetLoginState extends State<WidgetLogin> {
   
   GlobalKey<FormState> formkey = GlobalKey<FormState>();  
   TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
+  ProgressDialog pr;
   String _login, _senha;
 
   @override
   Widget build(BuildContext context) {
+    pr = new ProgressDialog(context, showLogs: true);
+    pr.style(message: " Loading...",
+      progressWidget: (Image.asset('imagens/logo-splash.gif')),
+      elevation: 20.0,
+    );
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -41,6 +49,8 @@ class _WidgetLoginState extends State<WidgetLogin> {
                   SizedBox(width: 300.0, child: buildTextSenha()),
 
                   SizedBox(width: 300.0, child: buildButtonEntrar()),
+
+                  SizedBox(width: 300.0, child: botaoCadastrar()),
                   
                 ]
               ) 
@@ -122,47 +132,95 @@ class _WidgetLoginState extends State<WidgetLogin> {
   }
 
   buildButtonEntrar(){
-    return ButtonTheme(
-      minWidth: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-      
-      child: RaisedButton(
+
+    return Container(
+      width: MediaQuery.of(context).size.width / 1.2,
+      height: 56,
+      margin: EdgeInsets.only(top: 27),
+
+      child: ButtonTheme(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         
-        color: Color(0xFF3050ff),
-        child: Text("ENTRAR",
-          textAlign: TextAlign.center,
-          style: style.copyWith(
-            color: Colors.white,
-            //fontWeight: FontWeight.bold
+        child: RaisedButton(
+          
+          color: Color(0xFF3050ff),
+          child: Text("ENTRAR",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            ),
           ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0)
+          ),
+          
+          onPressed: () {
+            
+            if(formkey.currentState.validate()){
+              formkey.currentState.save();
+              debugPrint(" Login: ${_login} \n Senha: ${_senha} \n");
+              
+              FocusScope.of(context).requestFocus(new FocusNode());
+              
+              var existe = Pessoa.construtor(_login,_senha);
+              
+              for(Pessoa f in listanovos){
+                if(f.equals(f, existe)){
+                  debugPrint("Login feito com sucesso");
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Pagina3()));
+                }
+                else{
+                  debugPrint("Login inexistente, cadastre antes");
+                }
+              } 
+            }
+          },
         ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0)
-        ),
-        
-        onPressed: () {
-          if(formkey.currentState.validate()){
-            formkey.currentState.save();
-            debugPrint(" Login: ${_login} \n Senha: ${_senha} \n");
-            
-            FocusScope.of(context).requestFocus(new FocusNode());
-            
-            var existe = Pessoa.construtor(_login,_senha);
-            
-            for(Pessoa f in listanovos){
-              if(f.equals(f, existe)){
-                debugPrint("Login feito com sucesso");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Pagina3()));
-              }
-              else{
-                debugPrint("Login inexistente, cadastre antes");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-              }
-            } 
-          }
-        },
       ),
     );
   }
+
+  botaoCadastrar(){
+
+    return  Container(
+      width: MediaQuery.of(context).size.width / 1.2,
+      height: 56,
+      margin: EdgeInsets.only(top: 12),
+
+      child: ButtonTheme(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+      
+        child: RaisedButton(  
+          color: Colors.white,
+          child: Text("CADASTRAR",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+              color: Color(0xFF2626ff),
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          shape: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Color(0xFF2626ff), width: 2.5),
+          ),
+
+          onPressed: (){
+            pr.show();
+            Future.delayed(Duration(seconds: 2)).then((value) {
+              pr.hide().whenComplete(() {
+                Navigator.of(context).push(CupertinoPageRoute(
+                  builder: (BuildContext context) => Login()
+                ));
+              });
+            });
+          }
+        )
+      ),
+    );
+  }
+
 }
 //FIM TELA DE LOGIN

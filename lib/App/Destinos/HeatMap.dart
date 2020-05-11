@@ -174,7 +174,7 @@ class MapSampleState extends State<MapSample> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title:   Text(
-          "Alunos abaixo da média por cidade",
+          "Alunos por cidade",
           style: style.copyWith(
             color: Colors.white,
             fontSize: 25.0,
