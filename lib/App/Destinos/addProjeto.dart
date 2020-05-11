@@ -207,21 +207,23 @@ class _AddProjetoState extends State<AddProjeto> {
   botaoFazerCadastro(){
     return ButtonTheme(
       minWidth: MediaQuery.of(context).size.width,
+                    
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     
       child: RaisedButton(
-        color: Color(0xFF3050ff),
-
-        child: Text("Criar",
+        color: Colors.white,
+        child: Text("CRIAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
-          color: Colors.white,
-          fontSize: 25.0,
+              color: Color(0xFF3050ff),
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold
           ),
         ),
-                      
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0)
+
+        shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: BorderSide(color: Color(0xFF3050ff), width: 2.5),
         ),
 
         onPressed: () => {

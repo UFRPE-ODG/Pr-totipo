@@ -161,7 +161,6 @@ class MapSampleState extends State<MapSample> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: GoogleMap(
-        markers: _markers,
         mapType: MapType.hybrid,
         initialCameraPosition: _kGooglePlex,
         heatmaps: _heatmaps,
@@ -215,7 +214,7 @@ class MapSampleState extends State<MapSample> {
     for(Marker a in _markers){
       points2.add(_createWeightedLatLng(a.position.latitude, a.position.longitude, 3));
     }
-    marcadores = !marcadores;
+    //marcadores = !marcadores;
     return points2;
   }
   WeightedLatLng _createWeightedLatLng(double lat, double lng, int weight) {
