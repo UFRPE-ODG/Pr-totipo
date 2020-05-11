@@ -34,8 +34,12 @@ class _MenuHeatState extends State<MenuHeat> {
                   child: Card(
                     elevation: 0.0,
                     color: Colors.white,
-                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.white70, width: 1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    margin: EdgeInsets.all(20.0),
+ 
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                       

@@ -206,6 +206,7 @@ class editProjeto extends StatelessWidget {
           style: style.copyWith(
               color: Colors.white,
               fontSize: 20.0,
+              fontWeight: FontWeight.bold
 
           ),
         ),

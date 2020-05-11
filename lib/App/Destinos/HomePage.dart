@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
           textAlign: TextAlign.center,
           style: style.copyWith(
             color: Color(0xFF2626ff),
-            //fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold
           ),
         ),
         shape: OutlineInputBorder(
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
           textAlign: TextAlign.center,
           style: style.copyWith(
             color: Colors.white,
-            //fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold
           ),
         ),
         shape: RoundedRectangleBorder(

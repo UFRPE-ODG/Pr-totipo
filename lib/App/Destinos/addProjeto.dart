@@ -217,6 +217,7 @@ class _AddProjetoState extends State<AddProjeto> {
           style: style.copyWith(
               color: Colors.white,
               fontSize: 20.0,
+              fontWeight: FontWeight.bold
           ),
         ),
 

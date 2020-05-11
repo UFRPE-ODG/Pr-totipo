@@ -3,7 +3,7 @@ import 'package:estudos_flutter/main.dart';
 import 'package:estudos_flutter/App/ClassesAParte/Botao.dart';
 import 'Pagina3.dart';
 
-TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0);
+TextStyle style = TextStyle(fontFamily: "Glacial Indifference", fontSize: 20.0, );
 
 class Configuracao extends StatefulWidget {
   @override
