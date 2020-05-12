@@ -172,7 +172,7 @@ class MapSampleState extends State<MapSample> {
         
       ),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0xFF3050ff),
         title:   Text(
           "Alunos por cidade",
           style: style.copyWith(
