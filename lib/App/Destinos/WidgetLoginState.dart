@@ -21,7 +21,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
   @override
   Widget build(BuildContext context) {
     pr = new ProgressDialog(context, showLogs: true);
-    pr.style(message: " Loading...",
+    pr.style(message: " Carregando...",
       progressWidget: (Image.asset('imagens/logo-splash.gif')),
       elevation: 20.0,
     );
