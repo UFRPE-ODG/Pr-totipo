@@ -267,7 +267,7 @@ class _LoginState extends State<Login> {
 
         onPressed: () => {
 
-          formkey2.currentState.validate(),
+          /*formkey2.currentState.validate();
 
           if(_email.isNotEmpty & _password.isNotEmpty){
 
@@ -278,15 +278,15 @@ class _LoginState extends State<Login> {
               debugPrint("Cadastrado com sucesso"),
             },
             if(confirm == _password){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetLogin()))
+              
             }
 
 
           }
           else{
             debugPrint("Informações necessárias não informadas")
-          }
-
+          }*/
+          Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetLogin()))
         },
       ),
     );

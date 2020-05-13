@@ -138,14 +138,16 @@ class _SearchPageState extends State<SearchPage> {
         itemBuilder: (context, index) {
 
           return Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: 20,),
+            //height: 50.0,
+
             child: ListTile(          
-                leading: Icon(Icons.assignment, size: 50, color: Colors.black,),
+                leading: Icon(Icons.assignment, size: 50, color: Colors.blue,),
                 
                 title: Text('${items[index]}',   
                   style: style.copyWith(
                     fontSize: 20.0,
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -159,7 +161,7 @@ class _SearchPageState extends State<SearchPage> {
                   child: Center(
                     child: RaisedButton( 
                       color: Colors.white,
-                      child: Icon(Icons.edit, color: Colors.black,),
+                      child: Icon(Icons.edit, color: Colors.blue,),
                       elevation: 0.0,
                       
                       onPressed: () {
@@ -199,7 +201,7 @@ class _SearchPageState extends State<SearchPage> {
                             
                 },
             ),
-          );                              
+          );  
         },
       ),              
     );
@@ -284,4 +286,3 @@ lista(){
     
   items.addAll(nomeProj);
 }
-

@@ -213,7 +213,7 @@ class editProjeto extends StatelessWidget {
                     
       child: RaisedButton(
         color: Color(0xFF3050ff),
-        child: Text("EDITAR",
+        child: Text("SALVAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
               color: Colors.white,

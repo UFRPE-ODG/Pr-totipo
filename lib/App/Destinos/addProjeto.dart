@@ -224,7 +224,7 @@ class _AddProjetoState extends State<AddProjeto> {
                     
       child: RaisedButton(
         color: Color(0xFF3050ff),
-        child: Text("CRIAR",
+        child: Text("SALVAR",
           textAlign: TextAlign.center,
           style: style.copyWith(
               color: Colors.white,

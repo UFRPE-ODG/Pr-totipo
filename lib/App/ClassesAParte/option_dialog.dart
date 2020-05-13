@@ -68,7 +68,7 @@ class Option {
  turnb(){
     b = true; 
  }
-  editar(context){
+  /*editar(context){
   
     var editando = List<Option>()
     ..add(Option.nome())
@@ -77,7 +77,7 @@ class Option {
     ..add(Option.porc());
    return optionsDialog(context, "Editar", editando);
 
-}
+}*/
 
 ed2(context){
    return singleInputDialog(
